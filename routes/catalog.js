@@ -4,6 +4,15 @@ const router = express.Router();
 const Catalog = require('../models/catalog');
 const getService = require('../middlewares/getService');
 
+//health endpoint
+router.get('/health', async(req, res) => {
+  try {
+    return res.status(200).json({message: 'service healthy'})
+  } catch (err) {
+    return res.status(500).json({ message: err.message })
+  } 
+});
+
 // get all services
 router.get('/', async (req, res) => {
   try {

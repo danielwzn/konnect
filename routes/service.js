@@ -3,6 +3,15 @@ const express = require('express');
 const router = express.Router();
 const Service = require('../models/service');
 
+//health endpoint
+router.get('/health', async(req, res) => {
+    try {
+      return res.status(200).json({message: 'service healthy'})
+    } catch (err) {
+      return res.status(500).json({ message: err.message })
+    } 
+  });
+
 // get all versions of one service
 router.get('/:serviceId', async (req, res) => {
   try {
