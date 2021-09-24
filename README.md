@@ -8,7 +8,7 @@ This project uses three techonologies from the MERN stack: MongoDB, Express.js, 
 
 Instead of SQL database, I opted in using NoSQL, document based MongoDB because it stores data in binary json format and is highly scalable in comparion to SQL database.
 
-I created two data models. Frist one is Catalog for stroring a list of high-level info on services and this can be used to populate the catalog page. The second one is called Service. It stores detailed info such as specific version and endpoint for one service. And to better focus on the core part of the application, I excluded company info from the data model. 
+I created two data models. Frist one is Catalog for storing a list of high-level info on services and this can be used to populate the catalog page. The second one is called Service. It stores detailed info such as specific version and endpoint for one service. And to better focus on the core part of the application, I excluded company info from the data model. 
 
 Ideally, the change in Service data model should result in a change in Catalog data model since they are correlated. However, for simplicity, this also is excluded from the project.
 
