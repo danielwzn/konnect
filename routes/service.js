@@ -8,10 +8,20 @@ router.get('/health', async(req, res) => {
     try {
       return res.status(200).json({message: 'service healthy'})
     } catch (err) {
-      return res.status(500).json({ message: err.message })
+      return res.status(500).json({ message: err.message });
     } 
   });
 
+// get all data
+router.get('/', async (req, res) => {
+    try {
+        const services = await Service.find();
+        return res.status(200).json(services);
+    } catch (err) {
+        return res.status(500).json({ message: err.message });
+    }
+});
+  
 // get all versions of one service
 router.get('/:serviceId', async (req, res) => {
   try {

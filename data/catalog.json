@@ -1,0 +1,76 @@
+{
+    "services": [
+        {
+            "_id": "614d9f622d30534748c6550d",
+            "name": "Collect Money",
+            "serviceId": "1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "versions": 3,
+            "creationTime": "2021-09-24T09:50:26.090Z",
+            "__v": 0
+        },
+        {
+            "_id": "614db7f98c4655482806d67c",
+            "name": "Locate Us",
+            "serviceId": "2",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "versions": 3,
+            "creationTime": "2021-09-24T11:35:21.042Z",
+            "__v": 0
+        },
+        {
+            "_id": "614ded3372eb664bee462b8b",
+            "name": "Contact Us",
+            "serviceId": "3",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "versions": 3,
+            "creationTime": "2021-09-24T15:22:27.025Z",
+            "__v": 0
+        },
+        {
+            "_id": "614deda772eb664bee462b8e",
+            "name": "FX Rates International",
+            "serviceId": "4",
+            "description": "To check currency transation rate of two countries.",
+            "versions": 1,
+            "creationTime": "2021-09-24T15:24:23.778Z",
+            "__v": 0
+        },
+        {
+            "_id": "614dee1c72eb664bee462b91",
+            "name": "Notifications",
+            "serviceId": "5",
+            "description": "Use email, text, or automatic phone call to notify customers",
+            "versions": 4,
+            "creationTime": "2021-09-24T15:26:20.991Z",
+            "__v": 0
+        },
+        {
+            "_id": "614dee4472eb664bee462b95",
+            "name": "Reporting",
+            "serviceId": "6",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "versions": 3,
+            "creationTime": "2021-09-24T15:27:00.562Z",
+            "__v": 0
+        },
+        {
+            "_id": "614dee5b72eb664bee462b98",
+            "name": "Security",
+            "serviceId": "7",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "versions": 3,
+            "creationTime": "2021-09-24T15:27:23.812Z",
+            "__v": 0
+        },
+        {
+            "_id": "614dee7672eb664bee462b9a",
+            "name": "Priority Service",
+            "serviceId": "8",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "versions": 2,
+            "creationTime": "2021-09-24T15:27:50.008Z",
+            "__v": 0
+        }
+    ]
+}

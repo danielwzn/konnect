@@ -1,0 +1,92 @@
+[
+    {
+        "_id": "614e0502d8cb990cf461507f",
+        "name": "Analytics",
+        "serviceId": "9",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "version": 1,
+        "endpoint": "https://us.api.konnect.com/v1/analytics",
+        "creationTime": "2021-09-24T17:04:02.085Z",
+        "__v": 0
+    },
+    {
+        "_id": "614e051cd8cb990cf4615082",
+        "name": "Analytics",
+        "serviceId": "9",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "version": 2,
+        "endpoint": "https://us.api.konnect.com/v2/analytics",
+        "creationTime": "2021-09-24T17:04:28.593Z",
+        "__v": 0
+    },
+    {
+        "_id": "614e0522d8cb990cf4615084",
+        "name": "Analytics",
+        "serviceId": "9",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "version": 3,
+        "endpoint": "https://us.api.konnect.com/v3/analytics",
+        "creationTime": "2021-09-24T17:04:34.017Z",
+        "__v": 0
+    },
+    {
+        "_id": "614e0595d8cb990cf4615088",
+        "name": "Collect Money",
+        "serviceId": "1",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "version": 1,
+        "endpoint": "https://us.api.konnect.com/v1/money",
+        "creationTime": "2021-09-24T17:06:29.376Z",
+        "__v": 0
+    },
+    {
+        "_id": "614e059bd8cb990cf461508a",
+        "name": "Collect Money",
+        "serviceId": "1",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "version": 2,
+        "endpoint": "https://us.api.konnect.com/v2/money",
+        "creationTime": "2021-09-24T17:06:35.913Z",
+        "__v": 0
+    },
+    {
+        "_id": "614e05a2d8cb990cf461508c",
+        "name": "Collect Money",
+        "serviceId": "1",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "version": 3,
+        "endpoint": "https://us.api.konnect.com/v3/money",
+        "creationTime": "2021-09-24T17:06:42.531Z",
+        "__v": 0
+    },
+    {
+        "_id": "614e062cd8cb990cf461508f",
+        "name": "Locate Us",
+        "serviceId": "2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "version": 1,
+        "endpoint": "https://us.api.konnect.com/v1/locate",
+        "creationTime": "2021-09-24T17:09:00.891Z",
+        "__v": 0
+    },
+    {
+        "_id": "614e0632d8cb990cf4615091",
+        "name": "Locate Us",
+        "serviceId": "2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "version": 2,
+        "endpoint": "https://us.api.konnect.com/v2/locate",
+        "creationTime": "2021-09-24T17:09:06.544Z",
+        "__v": 0
+    },
+    {
+        "_id": "614e0637d8cb990cf4615093",
+        "name": "Locate Us",
+        "serviceId": "2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "version": 3,
+        "endpoint": "https://us.api.konnect.com/v3/locate",
+        "creationTime": "2021-09-24T17:09:11.366Z",
+        "__v": 0
+    }
+]
