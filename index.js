@@ -14,8 +14,10 @@ db.once('open', () => console.log('Connected to DB!'));
 app.use(express.json());
 
 const catalogRouter = require('./routes/catalog');
+const serviceRouter = require('./routes/service');
 
 app.use('/catalog', catalogRouter);
+app.use('/service', serviceRouter);
 
 app.listen(port, () => {
   console.log('Server Started!');
