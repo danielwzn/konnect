@@ -2,17 +2,21 @@
   "name": "konnect",
   "version": "1.0.0",
   "description": "konnect service catelog api",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "dev": "nodemon index.js"
   },
   "author": "daniel wang",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^6.0.7",
+    "dotenv": "^10.0.0"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "nodemon": "^2.0.12"
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "nodemon": "^2.0.13"
   }
 }
