@@ -20,6 +20,19 @@ I do not use more complicated API pagenation methods like [bucket pattern](https
 * The caller passes correct query string, parameters, and input in the body of the request
 * The endpoint only return one company's service data
 
+# Run Service
+The service is not deployed anywhere and follow below steps to run locally.
+
+### Prerequisite:
+1. Node.js `V12.8.4` or above
+2. MongoDB `v5.0.2`
+
+### Steps
+1. Git clone `https://github.com/danielwzn/konnect.git`
+2. `npm install`
+3. `npm run dev` and by default the service will run on localhost:3000
+4. Use POST localhost:5000/catalog/ and POST localhost:5000/service/ to populate the db with service data first before trying out other endpoints
+
 # Supported Features
 * Have health check endpoint
 * Return a full list of services 
@@ -52,18 +65,6 @@ This section contains endpoints for both catalog.js and service.js routes
 * GET localhost:5000/service/:serviceId/:version
 * POST localhost:5000/service/
 
-# Run Service
-The service is not deployed anywhere and follow below steps to run locally.
-
-### Prerequisite:
-1. Node.js `V12.8.4` or above
-2. MongoDB `v5.0.2`
-
-### Steps
-1. Git clone `https://github.com/danielwzn/konnect.git`
-2. `npm install`
-3. `npm run dev` and by default the service will run on localhost:3000
-4. Use POST localhost:5000/catalog/ and POST localhost:5000/service/ to populate the db with service data first before trying out other endpoints
 
 
 
