@@ -20,6 +20,26 @@ I do not use more complicated API pagenation methods like [bucket pattern](https
 * The caller passes correct query string, parameters, and input in the body of the request
 * The endpoint only return one company's service data
 
+
+# Test Plan
+The test plan contains both unit and integration tests. 
+
+### Unit Test
+* Use `Jest` as the test framework [Jest with MongoDB](https://jestjs.io/docs/mongodb)
+* Use MongoDB Memory Server since it provides the option to store data in memeory so that it does mess up the actual database
+
+Tests catalog.js and service.js functions. Some examples below:
+-  POST a new service into Catalog and checks that all fields are defined
+- POST a new servie into the Catalog with malformatted body and the service should throw proper error code and messages
+- GET the inserted services and check all fields are defined. Also check the validity of its JSON format
+- GET by search query string and the count of returned items should match expected count
+- GET serviecs by sorting the creationTime and verify that creationTime is sorted in client specified order
+
+### Integretation Test
+* Create test collections in the cloud
+* Set up [runscope](https://www.runscope.com/) tests
+* Test e2e scenerios mentioned in unit tests
+
 # Run Service
 The service is not deployed anywhere and follow below steps to run locally.
 
@@ -64,6 +84,7 @@ This section contains endpoints for both catalog.js and service.js routes
 * GET localhost:PORT/service/:serviceId
 * GET localhost:PORT/service/:serviceId/:version
 * POST localhost:PORT/service/
+
 
 
 
