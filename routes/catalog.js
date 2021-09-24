@@ -18,13 +18,15 @@ router.get('/', async (req, res) => {
 });
 
 // get one service by id
-router.get('/:serviceId', getService, (req, res) => res.status(200).json(res.service));
+router.get('/:serviceId', getService, (req, res) => {
+  return res.status(200).json(res.service);
+});
 
 // can filter and search services by partial name, description, and serviceId
-router.get('/search', async (req, res) => {
+router.get('/services/search', async (req, res) => {
   const { q } = req.query;
   try {
-    const filteredServices = await Catalog
+    const services = await Catalog
       .find({
         $text: {
           $search: `${q}`,
@@ -33,8 +35,8 @@ router.get('/search', async (req, res) => {
         },
       });
     return res.status(200).json({
-      services: filteredServices,
-      count: filteredServices.length,
+      services,
+      count: services.length,
     });
   } catch (err) {
     return res.status(400).json({ message: err.message });
@@ -42,28 +44,28 @@ router.get('/search', async (req, res) => {
 });
 
 // sort result given a key and an order (-1, 1)
-router.get('/sort', async (req, res) => {
+router.get('/services/sort', async (req, res) => {
   const { key, order } = req.query;
   const mySort = {};
   mySort[key] = order;
   try {
-    const sortedServices = await Catalog.find().sort(mySort);
+    const services = await Catalog.find().sort(mySort);
     return res.status(200).json({
-      services: sortedServices,
-      count: sortedServices.length,
+      services,
+      count: services.length,
     });
   } catch (err) {
     return res.status(400).json({ message: err.message });
   }
 });
 
-router.get('/page', async (req, res) => {
+router.get('/services/page', async (req, res) => {
   const { skip, limit } = req.query;
   try {
-    const pagedServices = await Catalog.find().skip(Number(skip)).limit(Number(limit));
+    const services = await Catalog.find().skip(Number(skip)).limit(Number(limit));
     return res.status(200).json({
-      services: pagedServices,
-      count: pagedServices.length,
+      services,
+      count: services.length,
     });
   } catch (err) {
     return res.status(400).json({ message: err.message });
