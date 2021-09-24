@@ -9,8 +9,8 @@ router.get('/', async (req, res) => {
   try {
     const services = await Catalog.find();
     return res.status(200).json({
-        services: services,
-        count: services.length
+      services,
+      count: services.length,
     });
   } catch (err) {
     return res.status(500).json({ message: err.message });
@@ -18,9 +18,7 @@ router.get('/', async (req, res) => {
 });
 
 // get one service by id
-router.get('/:serviceId', getService, (req, res) => {
-  return res.status(200).json(res.service);
-});
+router.get('/:serviceId', getService, (req, res) => res.status(200).json(res.service));
 
 // can filter and search services by partial name, description, and serviceId
 router.get('/search', async (req, res) => {
@@ -35,8 +33,8 @@ router.get('/search', async (req, res) => {
         },
       });
     return res.status(200).json({
-        services: filteredServices,
-        count: filteredServices.length
+      services: filteredServices,
+      count: filteredServices.length,
     });
   } catch (err) {
     return res.status(400).json({ message: err.message });
@@ -51,26 +49,25 @@ router.get('/sort', async (req, res) => {
   try {
     const sortedServices = await Catalog.find().sort(mySort);
     return res.status(200).json({
-        services: sortedServices,
-        count: sortedServices.length
+      services: sortedServices,
+      count: sortedServices.length,
     });
   } catch (err) {
     return res.status(400).json({ message: err.message });
   }
 });
 
-
 router.get('/page', async (req, res) => {
-    const {skip, limit} = req.query;
-    try {
-        const pagedServices = await Catalog.find().skip(Number(skip)).limit(Number(limit));
-        return res.status(200).json({
-            services: pagedServices,
-            count: pagedServices.length
-        });
-    } catch (err) {
-        return res.status(400).json({ message: err.message });
-    }
+  const { skip, limit } = req.query;
+  try {
+    const pagedServices = await Catalog.find().skip(Number(skip)).limit(Number(limit));
+    return res.status(200).json({
+      services: pagedServices,
+      count: pagedServices.length,
+    });
+  } catch (err) {
+    return res.status(400).json({ message: err.message });
+  }
 });
 
 // create services in catalog
@@ -85,7 +82,7 @@ router.post('/', async (req, res) => {
     const newService = await service.save();
     return res.status(201).json({
       message: 'Successfully created a new service.',
-      newService: newService,
+      newService,
     });
   } catch (err) {
     return res.status(400).json({ message: err.message });
