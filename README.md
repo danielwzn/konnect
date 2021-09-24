@@ -1,6 +1,8 @@
 # konnect
 Kong take home assignment
 
+[Demo](https://youtu.be/tIuvxtTes_0)
+
 # Designs and Tradeoffs
 This project uses three techonologies from the MERN stack: MongoDB, Express.js, and Node.js. They are all open source and robust technologies that enbale fast development of full-stack applications. The code base uses MVC (model, view, controller) design pattern. 
 
