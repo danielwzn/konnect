@@ -52,18 +52,18 @@ This section contains endpoints for both catalog.js and service.js routes
 * GET localhost:PORT/catalog/:seriveId
 * GET localhost:PORT/catalog/services/search?q=
 * GET localhost:PORT/catalog/services/sort?key=&order=
-* GET localhost:5000/catalog/services/page?skip=&limit=
-* GET localhost:5000/catalog/
-* POST localhost:5000/catalog/
-* PATCH localhost:5000/catalog/:serviceId
-* DELETE localhost:5000/catalog/:serviceId
+* GET localhost:PORT/catalog/services/page?skip=&limit=
+* GET localhost:PORT/catalog/
+* POST localhost:PORT/catalog/
+* PATCH localhost:PORT/catalog/:serviceId
+* DELETE localhost:PORT/catalog/:serviceId
 
 ### Service.js Routes
-* GET localhost:5000/service/health
-* GET localhost:5000/service/
-* GET localhost:5000/service/:serviceId
-* GET localhost:5000/service/:serviceId/:version
-* POST localhost:5000/service/
+* GET localhost:PORT/service/health
+* GET localhost:PORT/service/
+* GET localhost:PORT/service/:serviceId
+* GET localhost:PORT/service/:serviceId/:version
+* POST localhost:PORT/service/
 
 
 
