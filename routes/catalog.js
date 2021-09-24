@@ -2,39 +2,27 @@ const express = require('express');
 
 const router = express.Router();
 const Catalog = require('../models/catalog');
-
-async function getService(req, res, next) {
-  let service;
-  try {
-    service = await Catalog.find({ serviceId: req.params.serviceId });
-    if (service.length === 0) {
-      return res.status(404).json({ message: 'The service does not exist' });
-    }
-  } catch (err) {
-    return res.status(500).json({ message: err.message });
-  }
-  // by id, only one service can be returned
-  const [first] = service;
-  res.service = first;
-  next();
-}
+const getService = require('../middlewares/getService');
 
 // get all services
 router.get('/', async (req, res) => {
   try {
     const services = await Catalog.find();
-    res.status(200).json(services);
+    return res.status(200).json({
+        services: services,
+        count: services.length
+    });
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    return res.status(500).json({ message: err.message });
   }
 });
 
 // get one service by id
-router.get('/service/:serviceId', getService, (req, res) => {
-  res.status(200).json(res.service);
+router.get('/:serviceId', getService, (req, res) => {
+  return res.status(200).json(res.service);
 });
 
-// can filter or search services by partial name, description, and serviceId
+// can filter and search services by partial name, description, and serviceId
 router.get('/search', async (req, res) => {
   const { q } = req.query;
   try {
@@ -46,22 +34,43 @@ router.get('/search', async (req, res) => {
           $diacriticSensitive: false,
         },
       });
-    res.status(200).json(filteredServices);
+    return res.status(200).json({
+        services: filteredServices,
+        count: filteredServices.length
+    });
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    return res.status(400).json({ message: err.message });
   }
 });
 
+// sort result given a key and an order (-1, 1)
 router.get('/sort', async (req, res) => {
   const { key, order } = req.query;
   const mySort = {};
   mySort[key] = order;
   try {
     const sortedServices = await Catalog.find().sort(mySort);
-    res.status(200).json(sortedServices);
+    return res.status(200).json({
+        services: sortedServices,
+        count: sortedServices.length
+    });
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    return res.status(400).json({ message: err.message });
   }
+});
+
+
+router.get('/page', async (req, res) => {
+    const {skip, limit} = req.query;
+    try {
+        const pagedServices = await Catalog.find().skip(Number(skip)).limit(Number(limit));
+        return res.status(200).json({
+            services: pagedServices,
+            count: pagedServices.length
+        });
+    } catch (err) {
+        return res.status(400).json({ message: err.message });
+    }
 });
 
 // create services in catalog
@@ -74,12 +83,12 @@ router.post('/', async (req, res) => {
   });
   try {
     const newService = await service.save();
-    res.status(201).json({
+    return res.status(201).json({
       message: 'Successfully created a new service.',
-      newService,
+      newService: newService,
     });
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    return res.status(400).json({ message: err.message });
   }
 });
 
@@ -96,12 +105,12 @@ router.patch('/:serviceId', getService, async (req, res) => {
   }
   try {
     const updatedService = await res.service.save();
-    res.status(200).json({
+    return res.status(200).json({
       message: 'Successfully updated the service.',
       service: updatedService,
     });
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    return res.status(400).json({ message: err.message });
   }
 });
 
@@ -109,9 +118,9 @@ router.patch('/:serviceId', getService, async (req, res) => {
 router.delete('/:serviceId', getService, async (req, res) => {
   try {
     await res.service.remove();
-    res.status(200).json({ message: 'The service has been successfully deleted!' });
+    return res.status(200).json({ message: 'The service has been successfully deleted!' });
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    return res.status(500).json({ message: err.message });
   }
 });
 
